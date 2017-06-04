@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/e3-common/e3-common (1).iml" filepath="$PROJECT_DIR$/e3-common/e3-common (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/e3-common/target/classes/META-INF/maven/cn.e3mall/e3-common/e3-common (2).iml" filepath="$PROJECT_DIR$/e3-common/target/classes/META-INF/maven/cn.e3mall/e3-common/e3-common (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/e3-common/target/classes/META-INF/maven/cn.e3mall/e3-common/e3-common (3).iml" filepath="$PROJECT_DIR$/e3-common/target/classes/META-INF/maven/cn.e3mall/e3-common/e3-common (3).iml" />
+      <module fileurl="file://$PROJECT_DIR$/e3-manager/e3-manager.iml" filepath="$PROJECT_DIR$/e3-manager/e3-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/e3-manager/e3-manager-dao/e3-manager-dao (1).iml" filepath="$PROJECT_DIR$/e3-manager/e3-manager-dao/e3-manager-dao (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/e3-manager/e3-manager-dao/target/classes/META-INF/maven/cn.e3mall/e3-manager-dao/e3-manager-dao (2).iml" filepath="$PROJECT_DIR$/e3-manager/e3-manager-dao/target/classes/META-INF/maven/cn.e3mall/e3-manager-dao/e3-manager-dao (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/e3-manager/e3-manager-dao/target/classes/META-INF/maven/cn.e3mall/e3-manager-dao/e3-manager-dao (3).iml" filepath="$PROJECT_DIR$/e3-manager/e3-manager-dao/target/classes/META-INF/maven/cn.e3mall/e3-manager-dao/e3-manager-dao (3).iml" />
+      <module fileurl="file://$PROJECT_DIR$/e3-manager/e3-manager-interface/e3-manager-interface (1).iml" filepath="$PROJECT_DIR$/e3-manager/e3-manager-interface/e3-manager-interface (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/e3-manager/e3-manager-interface/target/classes/META-INF/maven/cn.e3mall/e3-manager-interface/e3-manager-interface (2).iml" filepath="$PROJECT_DIR$/e3-manager/e3-manager-interface/target/classes/META-INF/maven/cn.e3mall/e3-manager-interface/e3-manager-interface (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/e3-manager/e3-manager-interface/target/classes/META-INF/maven/cn.e3mall/e3-manager-interface/e3-manager-interface (3).iml" filepath="$PROJECT_DIR$/e3-manager/e3-manager-interface/target/classes/META-INF/maven/cn.e3mall/e3-manager-interface/e3-manager-interface (3).iml" />
+      <module fileurl="file://$PROJECT_DIR$/e3-manager/e3-manager-pojo/e3-manager-pojo (1).iml" filepath="$PROJECT_DIR$/e3-manager/e3-manager-pojo/e3-manager-pojo (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/e3-manager/e3-manager-pojo/target/classes/META-INF/maven/cn.e3mall/e3-manager-pojo/e3-manager-pojo (2).iml" filepath="$PROJECT_DIR$/e3-manager/e3-manager-pojo/target/classes/META-INF/maven/cn.e3mall/e3-manager-pojo/e3-manager-pojo (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/e3-manager/e3-manager-pojo/target/classes/META-INF/maven/cn.e3mall/e3-manager-pojo/e3-manager-pojo (3).iml" filepath="$PROJECT_DIR$/e3-manager/e3-manager-pojo/target/classes/META-INF/maven/cn.e3mall/e3-manager-pojo/e3-manager-pojo (3).iml" />
+      <module fileurl="file://$PROJECT_DIR$/e3-manager/e3-manager-service/e3-manager-service (1).iml" filepath="$PROJECT_DIR$/e3-manager/e3-manager-service/e3-manager-service (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/e3-manager/e3-manager-service/target/m2e-jee/web-resources/META-INF/maven/cn.e3mall/e3-manager-service/e3-manager-service (2).iml" filepath="$PROJECT_DIR$/e3-manager/e3-manager-service/target/m2e-jee/web-resources/META-INF/maven/cn.e3mall/e3-manager-service/e3-manager-service (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/e3-manager/e3-manager-service/target/m2e-jee/web-resources/META-INF/maven/cn.e3mall/e3-manager-service/e3-manager-service (3).iml" filepath="$PROJECT_DIR$/e3-manager/e3-manager-service/target/m2e-jee/web-resources/META-INF/maven/cn.e3mall/e3-manager-service/e3-manager-service (3).iml" />
+      <module fileurl="file://$PROJECT_DIR$/e3-manager-web/e3-manager-web (1).iml" filepath="$PROJECT_DIR$/e3-manager-web/e3-manager-web (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/e3-manager-web/target/m2e-jee/web-resources/META-INF/maven/cn.e3mall/e3-manager-web/e3-manager-web (2).iml" filepath="$PROJECT_DIR$/e3-manager-web/target/m2e-jee/web-resources/META-INF/maven/cn.e3mall/e3-manager-web/e3-manager-web (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/e3-manager-web/target/m2e-jee/web-resources/META-INF/maven/cn.e3mall/e3-manager-web/e3-manager-web (3).iml" filepath="$PROJECT_DIR$/e3-manager-web/target/m2e-jee/web-resources/META-INF/maven/cn.e3mall/e3-manager-web/e3-manager-web (3).iml" />
+      <module fileurl="file://$PROJECT_DIR$/e3-parent/e3-parent.iml" filepath="$PROJECT_DIR$/e3-parent/e3-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/e3-common/target/maven-archiver/maven-archiver.iml" filepath="$PROJECT_DIR$/e3-common/target/maven-archiver/maven-archiver.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="e3-manager-service (3):war">
+    <output-path>$PROJECT_DIR$/e3-manager/e3-manager-service/target/m2e-jee/web-resources/META-INF/maven/cn.e3mall/e3-manager-service/target</output-path>
+    <root id="archive" name="e3-manager-service.war">
+      <element id="artifact" artifact-name="e3-manager-service (3):war exploded" />
+    </root>
+  </artifact>
+</component>

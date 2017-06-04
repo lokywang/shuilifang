@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="e3-common (1)" />
+        <module name="e3-common (2)" />
+        <module name="e3-common (3)" />
+        <module name="e3-manager-dao (1)" />
+        <module name="e3-manager-dao (2)" />
+        <module name="e3-manager-dao (3)" />
+        <module name="e3-manager-interface (1)" />
+        <module name="e3-manager-interface (2)" />
+        <module name="e3-manager-interface (3)" />
+        <module name="e3-manager-pojo (1)" />
+        <module name="e3-manager-pojo (2)" />
+        <module name="e3-manager-pojo (3)" />
+        <module name="e3-manager-service (1)" />
+        <module name="e3-manager-service (2)" />
+        <module name="e3-manager-service (3)" />
+        <module name="e3-manager-web (1)" />
+        <module name="e3-manager-web (2)" />
+        <module name="e3-manager-web (3)" />
+        <module name="maven-archiver" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="e3-common (1)" target="1.7" />
+      <module name="e3-common (2)" target="1.5" />
+      <module name="e3-common (3)" target="1.7" />
+      <module name="e3-manager" target="1.7" />
+      <module name="e3-manager-dao (1)" target="1.7" />
+      <module name="e3-manager-dao (2)" target="1.5" />
+      <module name="e3-manager-dao (3)" target="1.7" />
+      <module name="e3-manager-interface (1)" target="1.7" />
+      <module name="e3-manager-interface (2)" target="1.5" />
+      <module name="e3-manager-interface (3)" target="1.7" />
+      <module name="e3-manager-pojo (1)" target="1.7" />
+      <module name="e3-manager-pojo (2)" target="1.5" />
+      <module name="e3-manager-pojo (3)" target="1.7" />
+      <module name="e3-manager-service (1)" target="1.7" />
+      <module name="e3-manager-service (2)" target="1.5" />
+      <module name="e3-manager-service (3)" target="1.7" />
+      <module name="e3-manager-web (1)" target="1.7" />
+      <module name="e3-manager-web (2)" target="1.5" />
+      <module name="e3-manager-web (3)" target="1.7" />
+      <module name="e3-parent" target="1.7" />
+      <module name="maven-archiver" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
