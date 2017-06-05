@@ -4,18 +4,18 @@ import java.util.List;
 
 public class EasyUIDataGridResult implements Serializable{
 
-    private Integer total;
+    private long total;
 
     private List<?> rows;
 
   
 
-    public Integer getTotal() {
+    public long getTotal() {
         return total;
     }
 
-    public void setTotal(Integer total) {
-        this.total = total;
+    public void setTotal(long total2) {
+        this.total = total2;
     }
 
     public List<?> getRows() {
