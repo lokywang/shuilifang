@@ -59,10 +59,10 @@ public class ContentServiceImpl implements ContentService{
 	 */
 	public E3Result addTbContent(TbContent content) {
 		Date date = new Date();
-		
 		content.setCreated(date);
 		content.setUpdated(date);
 		contentMapper.insert(content);
+		jedisClient.hdel("CONTENT_KEY", content.getCategoryId().toString());
 		return E3Result.ok();
 	}
 
