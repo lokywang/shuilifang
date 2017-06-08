@@ -10,12 +10,9 @@
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
 	
 	
-	<!-- 连接solr单机版 -->
 	<bean id="httpSolrServer" class="org.apache.solr.client.solrj.impl.HttpSolrServer">
-		<constructor-arg index="0"
-			value="http://192.168.25.138:8080/solr" />
+		<constructor-arg index="0" value="http://192.168.25.138:8080/solr"/>
 	</bean>
+	
+
 </beans>
-
-
-
