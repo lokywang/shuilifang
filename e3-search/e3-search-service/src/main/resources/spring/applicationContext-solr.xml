@@ -13,7 +13,13 @@
 	<!-- solr单机版 -->
 	<bean id="httpSolrServer" class="org.apache.solr.client.solrj.impl.HttpSolrServer">
 		<constructor-arg index="0" value="http://192.168.25.138:8080/solr"/>
-	</bean>
+	</bean> 
+	<!-- 集群版solr服务 -->
+<!-- 	<bean id="cloudSolrServer" class="org.apache.solr.client.solrj.impl.CloudSolrServer">
+		<constructor-arg name="zkHost" value="192.168.25.138:2181,192.168.25.138:2182,192.168.25.138:2183"></constructor-arg>	
+		<property name="defaultCollection" value="collection2"></property>
+	</bean> -->
+	
 	
 
 </beans>

@@ -3,7 +3,16 @@ package cn.e3mall.service.impl;
 import java.util.Date;
 import java.util.List;
 
+import javax.annotation.Resource;
+import javax.jms.Destination;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.Session;
+import javax.jms.TextMessage;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jms.core.JmsTemplate;
+import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.PageHelper;
@@ -24,6 +33,16 @@ public class ItemServiceImpl implements ItemService {
 
 	@Autowired
 	private TbItemMapper tbItemMapper;
+	
+	@Autowired
+	private TbItemMapper itemMapper;
+	@Autowired
+	private TbItemDescMapper descMapper;
+	
+	@Autowired
+	private JmsTemplate jmsTemplate;
+	@Resource
+	private Destination topicDestination;
 	
 	public TbItem getTbItemById(long itemId) {
 		TbItem tbItem = tbItemMapper.selectByPrimaryKey(itemId);
@@ -62,14 +81,11 @@ public class ItemServiceImpl implements ItemService {
 	    * @Parameters: ItemServiceImpl
 	 */
 	
-	@Autowired
-	private TbItemMapper itemMapper;
-	@Autowired
-	private TbItemDescMapper descMapper;
+
 	
 	public E3Result addItem(TbItem item, String desc) {
 		//1.生成商品id
-		long itemId = IDUtils.genItemId();
+		final long itemId = IDUtils.genItemId();
 		//2.补全商品信息
 		item.setId(itemId);
 		//商品状态，1-正常，2-下架，3-删除
@@ -86,6 +102,16 @@ public class ItemServiceImpl implements ItemService {
 		itDesc.setUpdated(date);
 		itDesc.setItemDesc(desc);	
 		descMapper.insert(itDesc);
+		//发送一个商品添加
+		jmsTemplate.send(topicDestination, new MessageCreator() {
+			
+			@Override
+			public Message createMessage(Session session) throws JMSException {
+				TextMessage textMessage = session.createTextMessage(itemId + "");
+				return textMessage;
+			}
+		});
+		// 7、e3Result.ok()
 		return E3Result.ok();
 	}
 
