@@ -10,7 +10,9 @@ import javax.jms.Message;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Service;
@@ -18,15 +20,18 @@ import org.springframework.stereotype.Service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
+import cn.e3mall.common.jedis.JedisClient;
 import cn.e3mall.common.pojo.E3Result;
 import cn.e3mall.common.pojo.EasyUIDataGridResult;
 import cn.e3mall.common.utils.IDUtils;
+import cn.e3mall.common.utils.JsonUtils;
 import cn.e3mall.mapper.TbItemDescMapper;
 import cn.e3mall.mapper.TbItemMapper;
 import cn.e3mall.pojo.TbItem;
 import cn.e3mall.pojo.TbItemDesc;
 import cn.e3mall.pojo.TbItemExample;
 import cn.e3mall.service.ItemService;
+import redis.clients.jedis.Jedis;
 
 @Service
 public class ItemServiceImpl implements ItemService {
@@ -43,9 +48,36 @@ public class ItemServiceImpl implements ItemService {
 	private JmsTemplate jmsTemplate;
 	@Resource
 	private Destination topicDestination;
+	@Autowired
+	private TbItemDescMapper itemDescMapper;
+	@Autowired
+	private JedisClient jedisClient;
+	@Value("${ITEM_INFO_EXPIRE}")
+	private Integer ITEM_INFO_EXPIRE;
 	
 	public TbItem getTbItemById(long itemId) {
+		try {
+			//查询缓存
+			String json = jedisClient.get("ITEM_INFO" + ":" + itemId + ":BASE");
+			if (StringUtils.isNotBlank(json)) {
+				//把json转换为java对象
+				TbItem item = JsonUtils.jsonToPojo(json, TbItem.class);
+				return item;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		TbItem tbItem = tbItemMapper.selectByPrimaryKey(itemId);
+	
+			try {
+				//把数据保存到缓存
+				jedisClient.set("ITEM_INFO" + ":" + itemId + ":BASE", JsonUtils.objectToJson(tbItem));
+				//设置缓存的有效期
+				jedisClient.expire("ITEM_INFO" + ":" + itemId + ":BASE", ITEM_INFO_EXPIRE);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
 		return tbItem;
 	}
 
@@ -114,5 +146,32 @@ public class ItemServiceImpl implements ItemService {
 		// 7、e3Result.ok()
 		return E3Result.ok();
 	}
+
+	public TbItemDesc getItemDescById(long itemId) {
+		try {
+			//查询缓存
+			String json = jedisClient.get("ITEM_INFO" + ":" + itemId + ":DESC");
+			if (StringUtils.isNotBlank(json)) {
+				//把json转换为java对象
+				TbItemDesc itemDesc = JsonUtils.jsonToPojo(json, TbItemDesc.class);
+				return itemDesc;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		TbItemDesc itemDesc = itemDescMapper.selectByPrimaryKey(itemId);
+		
+		try {
+			//把数据保存到缓存
+			jedisClient.set("ITEM_INFO" + ":" + itemId + ":DESC", JsonUtils.objectToJson(itemDesc));
+			//设置缓存的有效期
+			jedisClient.expire("ITEM_INFO" + ":" + itemId + ":DESC", ITEM_INFO_EXPIRE);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return itemDesc;
+	}
+
 
 }
